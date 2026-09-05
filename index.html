@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YCCE | Training & Placement Cell</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="logo-section">
+
+        <div class="college-logo">
+            Y
+        </div>
+
+        <div>
+            <h2>YCCE</h2>
+            <span>TPO Portal</span>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="#" class="nav-link active" data-section="dashboard">
+            <i class="fa-solid fa-chart-line"></i>
+            Dashboard
+        </a>
+
+        <a href="#" class="nav-link" data-section="students">
+            <i class="fa-solid fa-user-graduate"></i>
+            Students
+        </a>
+
+        <a href="#" class="nav-link" data-section="companies">
+            <i class="fa-solid fa-building"></i>
+            Companies
+        </a>
+
+        <a href="#" class="nav-link" data-section="placements">
+            <i class="fa-solid fa-briefcase"></i>
+            Placements
+        </a>
+
+        <a href="#" class="nav-link" data-section="announcements">
+            <i class="fa-solid fa-bell"></i>
+            Announcements
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <button id="themeToggle">
+            <i class="fa-solid fa-moon"></i>
+            Dark Mode
+        </button>
+
+        <button>
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main-content">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="page-title">
+
+            <h1 id="pageTitle">
+                Dashboard
+            </h1>
+
+            <p>
+                Training & Placement Cell
+            </p>
+
+        </div>
+
+        <div class="top-actions">
+
+            <button class="notification-btn">
+                <i class="fa-solid fa-bell"></i>
+                <span>3</span>
+            </button>
+
+            <div class="profile">
+
+                <div class="avatar">
+                    P
+                </div>
+
+                <div>
+                    <strong>TPO Admin</strong>
+                    <small>Administrator</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboard" class="content-section active">
+
+        <div class="welcome-card">
+
+            <div>
+
+                <span class="welcome-small">
+                    TRAINING & PLACEMENT CELL
+                </span>
+
+                <h2>
+                    Welcome to YCCE Placement Portal 👋
+                </h2>
+
+                <p>
+                    Manage student information, recruitment drives,
+                    companies and placement activities from one place.
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-graduation-cap welcome-icon"></i>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <div>
+
+                    <span>Total Students</span>
+
+                    <h2 id="totalStudents">
+                        0
+                    </h2>
+
+                    <small>
+                        Registered students
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+
+                <div>
+
+                    <span>Placed Students</span>
+
+                    <h2 id="placedStudents">
+                        0
+                    </h2>
+
+                    <small>
+                        Successfully placed
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <div>
+
+                    <span>Companies</span>
+
+                    <h2 id="totalCompanies">
+                        0
+                    </h2>
+
+                    <small>
+                        Recruiting companies
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <div>
+
+                    <span>Highest Package</span>
+
+                    <h2 id="highestPackage">
+                        ₹0 LPA
+                    </h2>
+
+                    <small>
+                        Current placement season
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECENT STUDENTS -->
+
+        <div class="dashboard-grid">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Recent Students</h3>
+                        <p>Recently registered students</p>
+                    </div>
+
+                    <button class="text-btn" onclick="showSection('students')">
+                        View All
+                    </button>
+
+                </div>
+
+                <div id="recentStudents"></div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Placement Overview</h3>
+                        <p>Current placement statistics</p>
+                    </div>
+
+                </div>
+
+                <div class="placement-progress">
+
+                    <div class="progress-info">
+                        <span>Placement Rate</span>
+                        <strong id="placementRate">0%</strong>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div id="placementProgress"></div>
+                    </div>
+
+                </div>
+
+                <div class="mini-stats">
+
+                    <div>
+                        <strong id="placedMini">0</strong>
+                        <span>Placed</span>
+                    </div>
+
+                    <div>
+                        <strong id="unplacedMini">0</strong>
+                        <span>Seeking Placement</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STUDENTS ================= -->
+
+    <section id="students" class="content-section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>Student Information</h2>
+                <p>Manage registered student records</p>
+            </div>
+
+            <div class="heading-actions">
+
+                <button class="secondary-btn" onclick="exportCSV()">
+                    <i class="fa-solid fa-download"></i>
+                    Export CSV
+                </button>
+
+                <button class="primary-btn" onclick="openStudentModal()">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Student
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-panel">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-search"></i>
+
+                <input
+                    type="text"
+                    id="studentSearch"
+                    placeholder="Search by name, roll number or email..."
+                >
+
+            </div>
+
+
+            <select id="branchFilter">
+
+                <option value="all">
+                    All Branches
+                </option>
+
+                <option value="CSE">
+                    Computer Science
+                </option>
+
+                <option value="AIML">
+                    CSE - AI & ML
+                </option>
+
+                <option value="ECE">
+                    Electronics & Communication
+                </option>
+
+                <option value="ETC">
+                    Electronics & Telecommunication
+                </option>
+
+                <option value="ME">
+                    Mechanical
+                </option>
+
+            </select>
+
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="Placed">
+                    Placed
+                </option>
+
+                <option value="Not Placed">
+                    Not Placed
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- STUDENT TABLE -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Student</th>
+
+                        <th>Roll No.</th>
+
+                        <th>Branch</th>
+
+                        <th>CGPA</th>
+
+                        <th>Placement Status</th>
+
+                        <th>Company</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="studentTableBody"></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COMPANIES ================= -->
+
+    <section id="companies" class="content-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>Recruiting Companies</h2>
+
+                <p>Companies participating in campus recruitment</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="company-grid" id="companyGrid"></div>
+
+    </section>
+
+
+    <!-- ================= PLACEMENTS ================= -->
+
+    <section id="placements" class="content-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>Placement Statistics</h2>
+
+                <p>Overview of the current placement season</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="placement-cards">
+
+            <div class="big-stat">
+
+                <span>Total Students</span>
+
+                <strong id="placementTotal">0</strong>
+
+            </div>
+
+            <div class="big-stat">
+
+                <span>Placed</span>
+
+                <strong id="placementPlaced">0</strong>
+
+            </div>
+
+            <div class="big-stat">
+
+                <span>Placement Rate</span>
+
+                <strong id="placementPercentage">0%</strong>
+
+            </div>
+
+            <div class="big-stat">
+
+                <span>Average Package</span>
+
+                <strong id="averagePackage">₹0 LPA</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h3>Placement Distribution</h3>
+
+            <div class="chart-container">
+
+                <div class="bar-chart">
+
+                    <div class="bar-item">
+
+                        <span>CSE</span>
+
+                        <div class="bar">
+                            <div style="width:85%"></div>
+                        </div>
+
+                        <strong>85%</strong>
+
+                    </div>
+
+
+                    <div class="bar-item">
+
+                        <span>AIML</span>
+
+                        <div class="bar">
+                            <div style="width:78%"></div>
+                        </div>
+
+                        <strong>78%</strong>
+
+                    </div>
+
+
+                    <div class="bar-item">
+
+                        <span>ECE</span>
+
+                        <div class="bar">
+                            <div style="width:68%"></div>
+                        </div>
+
+                        <strong>68%</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ANNOUNCEMENTS ================= -->
+
+    <section id="announcements" class="content-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>Announcements</h2>
+
+                <p>Latest Training & Placement updates</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="announcement-list">
+
+            <div class="announcement">
+
+                <div class="announcement-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <div>
+
+                    <h3>Campus Recruitment Drive</h3>
+
+                    <p>
+                        TCS recruitment drive registration is now open.
+                    </p>
+
+                    <small>
+                        2 hours ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="announcement">
+
+                <div class="announcement-icon">
+                    <i class="fa-solid fa-calendar"></i>
+                </div>
+
+                <div>
+
+                    <h3>Pre-Placement Talk</h3>
+
+                    <p>
+                        Infosys pre-placement talk scheduled for Monday.
+                    </p>
+
+                    <small>
+                        Yesterday
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="announcement">
+
+                <div class="announcement-icon">
+                    <i class="fa-solid fa-file"></i>
+                </div>
+
+                <div>
+
+                    <h3>Resume Submission</h3>
+
+                    <p>
+                        Final-year students are requested to update their resumes.
+                    </p>
+
+                    <small>
+                        2 days ago
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= STUDENT MODAL ================= -->
+
+<div class="modal-overlay" id="studentModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add Student
+                </h2>
+
+                <p>
+                    Enter student information
+                </p>
+
+            </div>
+
+            <button onclick="closeStudentModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form id="studentForm">
+
+            <input type="hidden" id="editIndex">
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Roll Number</label>
+
+                    <input
+                        type="text"
+                        id="studentRoll"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="studentEmail"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Phone</label>
+
+                    <input
+                        type="tel"
+                        id="studentPhone"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Branch</label>
+
+                    <select id="studentBranch" required>
+
+                        <option value="">
+                            Select Branch
+                        </option>
+
+                        <option value="CSE">
+                            CSE
+                        </option>
+
+                        <option value="AIML">
+                            CSE-AIML
+                        </option>
+
+                        <option value="ECE">
+                            ECE
+                        </option>
+
+                        <option value="ETC">
+                            ETC
+                        </option>
+
+                        <option value="ME">
+                            Mechanical
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>CGPA</label>
+
+                    <input
+                        type="number"
+                        id="studentCGPA"
+                        min="0"
+                        max="10"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Placement Status</label>
+
+                    <select id="studentStatus">
+
+                        <option value="Not Placed">
+                            Not Placed
+                        </option>
+
+                        <option value="Placed">
+                            Placed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Company</label>
+
+                    <input
+                        type="text"
+                        id="studentCompany"
+                        placeholder="Company name"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="closeStudentModal()"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Student
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= STUDENT PROFILE MODAL ================= -->
+
+<div class="modal-overlay" id="profileModal">
+
+    <div class="modal profile-modal">
+
+        <button
+            class="close-profile"
+            onclick="closeProfileModal()"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="profileContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div id="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
